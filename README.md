@@ -14,6 +14,13 @@ This project was built to fulfill the requirements of a web developer assignment
 
 ---
 
+## 🌐 Live Demo
+
+You can view the live deployed project here:
+**[https://nextgen-blog-seven.vercel.app/](https://nextgen-blog-seven.vercel.app/)**
+
+---
+
 ## ✨ Key Features
 
 * **Dynamic Content**: All blog posts are managed and served directly from a MongoDB database using Mongoose.
