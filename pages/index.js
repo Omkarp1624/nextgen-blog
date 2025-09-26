@@ -21,7 +21,12 @@ export default function Home({ initialPosts }) {
       }
     };
     const delayDebounceFn = setTimeout(() => {
-      fetchPosts();
+        // Only search if the user has typed something
+        if (searchTerm) {
+            fetchPosts();
+        } else {
+            setPosts(initialPosts); // Reset to all posts if search is cleared
+        }
     }, 300);
 
     return () => clearTimeout(delayDebounceFn);
@@ -40,6 +45,14 @@ export default function Home({ initialPosts }) {
           <h1 className="text-4xl md:text-5xl font-extrabold text-center mb-8 text-gray-800">
             Welcome to NextGen Blog
           </h1>
+
+          {/* START: This is the new button we added */}
+          <div className="text-center mb-8">
+            <Link href="/admin/create" className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300">
+              + Create New Post
+            </Link>
+          </div>
+          {/* END: This is the new button we added */}
           
           <input
             type="text"
